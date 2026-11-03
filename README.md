@@ -35,6 +35,26 @@ No extra libraries needed
 
 
 # **How to use**
+
+Default Faculty login credentials:
+| Username | Password |
+|----------|----------|
+| `admin`  | `123`    |
+
+## Students and subjects
+
+| # | Student ID       | Subject Code |
+|---|------------------|--------------|
+| 1 | 02-2627-009431   | GEN 001      |
+| 2 | 02-2627-013346   | GEN 002      |
+| 3 | 02-2627-009850   | GEN 006      |
+| 4 | 02-2627-009329   | MAT 152      |
+| 5 | 02-2627-009145   | PED 030      |
+
+**The two lists are independent: any student can have scores in any subject.**
+
+
+
 1.Run the program. The main menu shows Faculty Login, Student Login, and Exit.
 
 2.Faculty: log in, then choose to record quizzes, record modules, or view a class standing.
@@ -46,10 +66,7 @@ No extra libraries needed
 4.Choose Logout or Exit from a menu to go back.
 
 
-
 # How the class standing is computed
-
-For a student and subject:
 
 quiz %    = total quiz points earned   / total quiz points possible   x 100
 module %  = total module points earned / total module points possible x 100
@@ -57,7 +74,17 @@ module %  = total module points earned / total module points possible x 100
 standing  = (quiz % x 0.30) + (module % x 0.30)
 class standing grade = standing / 60 x 100
 
-Quizzes and modules each count for 30% of the grade, so the maximum is 60 and the result is scaled to a percentage. This works out to the average of the quiz % and the module %. If there are no quiz or module scores yet, that part counts as 0%.
+## Project Structure (Single File)
+
+All data is kept in memory using Python lists:
+
+- `subjects`, `student_id`
+- `quiz_earned`, `quiz_overall`, `quiz_list`
+- `module_earned`, `module_overall`, `module_list`
+- Each list is indexed as `[student][subject]`
+
+No external libraries or database are required, only the Python standard library.
+
 
 
 
