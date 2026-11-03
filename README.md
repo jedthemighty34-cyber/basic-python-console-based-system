@@ -1,7 +1,6 @@
 # basic-python-console-based-system
 
 **Class Standing Monitoring System**
-
 # A console program written in Python that lets faculty record quiz and module scores for students and lets students view their scores and estimated class standing, per subject.
 
 # **Features:**
